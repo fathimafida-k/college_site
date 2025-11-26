@@ -1,41 +1,36 @@
 const mongoose = require('mongoose')
-const courseSchema = new mongoose.Schema({
+const admissionSchema = new mongoose.Schema({
 
-    Cname:{
+    Sname:{
         type:String,
         required:true
     },
-        description:{
+        mail:{
         type:String,
         required:true,
     
     },
-      duration:{
+      phone:{
         type:String,
         required:true,
        
     },
-      level:{
+      address:{
         type:String,
         required:true
     
     },
-    fees:{
+     course:{
         type:String,
         required:true
     
     },
-       syllabus:{
+    qualification:{
         type:String,
         required:true
     
     },
-       dept:{
-        type:String,
-        required:true
-    
-    },
-       image:{
+  grade:{
         type:String,
         required:true
     
@@ -43,5 +38,5 @@ const courseSchema = new mongoose.Schema({
    
     
 })
-const course = mongoose.model("course",courseSchema)
-module.exports = course
+const admission = mongoose.model("admission",admissionSchema)
+module.exports = admission

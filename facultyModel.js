@@ -1,41 +1,38 @@
 const mongoose = require('mongoose')
-const courseSchema = new mongoose.Schema({
+const facultySchema = new mongoose.Schema({
 
-    Cname:{
+    Fname:{
         type:String,
         required:true
     },
-        description:{
+        dept:{
         type:String,
         required:true,
     
     },
-      duration:{
+      desg:{
         type:String,
         required:true,
        
     },
-      level:{
+      exp:{
         type:String,
         required:true
     
     },
-    fees:{
+     email:{
         type:String,
         required:true
     
     },
-       syllabus:{
+    qual:{
         type:String,
         required:true
     
     },
-       dept:{
-        type:String,
-        required:true
+       
     
-    },
-       image:{
+       profile:{
         type:String,
         required:true
     
@@ -43,5 +40,5 @@ const courseSchema = new mongoose.Schema({
    
     
 })
-const course = mongoose.model("course",courseSchema)
-module.exports = course
+const faculty = mongoose.model("faculty",facultySchema)
+module.exports = faculty

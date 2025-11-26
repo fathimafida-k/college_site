@@ -5,13 +5,13 @@ exports.addCourseController = async (req, res) => {
 
   console.log(req.body);
   
-  const { Cname,description,duration,level,fees,syllabus,faculty} = req.body;
+  const { Cname,description,duration,level,fees,syllabus,dept} = req.body;
 
  
   const image=req.file.filename
 
   try {
-    const newCourse = new course({ Cname,description,duration,level,fees,syllabus,faculty,image
+    const newCourse = new course({ Cname,description,duration,level,fees,syllabus,image,dept
     });
 
     await newCourse.save();
@@ -67,20 +67,19 @@ exports.deleteCourse=async(req,res)=>{
 }
 
 exports.editCourseController = async (req, res) => {
-  const { id } = req.params; // Course ID from URL
+  const { id } = req.params; 
   console.log(id);
   
   const { Cname, description, duration, level, fees, syllabus, faculty } = req.body;
 
-  // Get uploaded image filename if a new one is selected
   const uploadImage = req.file ? req.file.filename : undefined;
 
   try {
-    // Build the update object
+   
     const updateData = { Cname, description, duration, level, fees, syllabus, faculty };
     if (uploadImage) updateData.image = uploadImage;
 
-    // Update the course by ID
+  
     const updatedCourse = await course.findByIdAndUpdate(id, updateData, { new: true });
 
     if (!updatedCourse) {

@@ -1,16 +1,16 @@
 const mongoose = require('mongoose')
-const courseSchema = new mongoose.Schema({
+const deptSchema = new mongoose.Schema({
 
-    Cname:{
+    Dname:{
         type:String,
         required:true
     },
-        description:{
+        overview:{
         type:String,
         required:true,
     
     },
-      duration:{
+      courses:{
         type:String,
         required:true,
        
@@ -43,5 +43,5 @@ const courseSchema = new mongoose.Schema({
    
     
 })
-const course = mongoose.model("course",courseSchema)
-module.exports = course
+const dept = mongoose.model("dept",deptSchema)
+module.exports = dept
